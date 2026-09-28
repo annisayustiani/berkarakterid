@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BERKARAKTER.ID</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --cream: #f5efe3;
+      --cream-dark: #eee3d0;
+      --green: #a6b18b;
+      --green-dark: #4f5d45;
+      --pink: #e8b6b9;
+      --pink-light: #f6dddd;
+      --black: #20231e;
+      --gray: #74786d;
+      --white: #fffaf3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: "ITC Lubalin Graph",
+                   "Lubalin Graph",
+                   Georgia,
+                   serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+      height: 75px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(245,239,227,0.95);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(32,35,30,0.15);
+    }
+
+    .logo-text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .logo-text span {
+      font-weight: 400;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 12px;
+    }
+
+    .nav-menu a {
+      opacity: 0.65;
+      transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+      opacity: 1;
+    }
+
+    .nav-order {
+      background: var(--green-dark);
+      color: white;
+
+      padding: 11px 18px;
+      border-radius: 50px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: calc(100vh - 75px);
+
+      padding: 7vw;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+      gap: 7vw;
+    }
+
+    .small-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 3px;
+
+      color: var(--gray);
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(65px, 9vw, 130px);
+
+      font-weight: 500;
+      line-height: 0.9;
+
+      letter-spacing: -5px;
+    }
+
+    .hero h1 i {
+      color: var(--green-dark);
+    }
+
+    .hero-text {
+      max-width: 480px;
+
+      margin: 30px 0;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+
+      color: var(--gray);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 22px;
+
+      border-radius: 50px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .button-black {
+      background: var(--black);
+      color: white;
+    }
+
+    .button-outline {
+      border: 1px solid rgba(32,35,30,0.2);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* LOGO HERO */
+
+    .hero-logo {
+      background: var(--green);
+
+      padding: 30px;
+
+      transform: rotate(1deg);
+    }
+
+    .hero-logo img {
+      aspect-ratio: 1.35 / 1;
+
+      object-fit: cover;
+
+      border: 10px solid var(--cream-dark);
+    }
+
+    /* ================= VIDEO UTAMA ================= */
+
+    .featured-section {
+      background: var(--green-dark);
+      color: var(--white);
+
+      padding: 9vw 7%;
+    }
+
+    .section-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      color: var(--gray);
+
+      margin-bottom: 20px;
+    }
+
+    .featured-section .section-label {
+      color: #dce2d2;
+    }
+
+    .section-title {
+      font-size: clamp(55px, 7vw, 100px);
+
+      line-height: 0.9;
+
+      font-weight: 500;
+      letter-spacing: -4px;
+
+      margin-bottom: 45px;
+    }
+
+    .section-title i {
+      color: var(--pink);
+    }
+
+    .main-video {
+      width: 100%;
+      max-width: 1150px;
+
+      aspect-ratio: 16 / 9;
+
+      margin: auto;
+
+      background: #35412f;
+    }
+
+    .main-video video {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    /* ================= KOLEKSI ================= */
+
+    .collection {
+      padding: 9vw 7%;
+
+      background: var(--white);
+    }
+
+    .collection-description {
+      font-family: "DM Sans", sans-serif;
+
+      max-width: 500px;
+
+      margin-top: 25px;
+
+      color: var(--gray);
+
+      line-height: 1.7;
+    }
+
+    .products {
+      margin-top: 50px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+    }
+
+    .product {
+      background: var(--cream);
+
+      overflow: hidden;
+    }
+
+    .product img {
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      transition: 0.5s;
+    }
+
+    .product:hover img {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      padding: 18px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+    }
+
+    .product-name {
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+    .product-number {
+      font-family: "DM Sans", sans-serif;
+
+      color: var(--gray);
+
+      font-size: 10px;
+    }
+
+    .product-order {
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 10px;
+
+      text-decoration: underline;
+    }
+
+    /* ================= VIDEO KATALOG ================= */
+
+    .video-catalog {
+      padding: 9vw 7%;
+
+      background: var(--pink-light);
+    }
+
+    .video-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .video-card {
+      background: var(--pink);
+
+      padding: 10px;
+    }
+
+    .video-card video {
+      width: 100%;
+
+      aspect-ratio: 9 / 12;
+
+      object-fit: cover;
+
+      background: #d6a5a7;
+    }
+
+    .video-name {
+      display: block;
+
+      padding: 13px 5px 5px;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      padding: 10vw 7%;
+
+      background: var(--green);
+
+      display: grid;
+
+      grid-template-columns: 180px 1fr;
+
+      gap: 6vw;
+    }
+
+    .flower {
+      font-size: 90px;
+
+      color: var(--pink);
+    }
+
+    .about .section-label {
+      color: #edf0e6;
+    }
+
+    .about-text {
+      max-width: 550px;
+
+      margin-top: 30px;
+
+      color: white;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    /* ================= ORDER ================= */
+
+    .order {
+      padding: 10vw 7%;
+
+      display: grid;
+
+      grid-template-columns: 1fr 0.8fr;
+
+      gap: 8vw;
+    }
+
+    .order-description {
+      max-width: 520px;
+
+      margin-top: 30px;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color: var(--gray);
+    }
+
+    .wa-button {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      padding: 16px 22px;
+
+      background: var(--black);
+
+      color: white;
+
+      border-radius: 50px;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 11px;
+    }
+
+    .social-links {
+      border-top: 1px solid rgba(32,35,30,0.15);
+    }
+
+    .social-links a {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 22px 0;
+
+      border-bottom: 1px solid rgba(32,35,30,0.15);
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 12px;
+    }
+
+    .social-links span {
+      color: var(--gray);
+    }
+
+    /* ================= INFO ================= */
+
+    .info-section {
+      padding: 0 7% 9vw;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .info-section img {
+      width: 100%;
+
+      object-fit: cover;
+
+      max-height: 750px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      padding: 30px 7%;
+
+      border-top: 1px solid rgba(32,35,30,0.15);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 11px;
+    }
+
+    footer p {
+      color: var(--gray);
+    }
+
+    /* ================= HP ================= */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        height: 65px;
+
+        padding: 0 5%;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding: 15vw 6vw 18vw;
+
+        gap: 12vw;
+      }
+
+      .hero-logo {
+        order: -1;
+
+        padding: 14px;
+      }
+
+      .hero h1 {
+        font-size: 18vw;
+
+        letter-spacing: -2px;
+      }
+
+      .featured-section,
+      .collection,
+      .video-catalog,
+      .about,
+      .order {
+        padding: 18vw 6%;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+      }
+
+      .product-info {
+        display: block;
+      }
+
+      .product-number {
+        display: block;
+
+        margin-bottom: 7px;
+      }
+
+      .product-order {
+        display: block;
+
+        margin-top: 8px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .video-card:last-child {
+        display: none;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+      }
+
+      .flower {
+        font-size: 60px;
+      }
+
+      .order {
+        grid-template-columns: 1fr;
+
+        gap: 12vw;
+      }
+
+      .info-section {
+        grid-template-columns: 1fr;
+
+        padding: 0 6% 18vw;
+      }
+
+      footer {
+        display: block;
+
+        padding: 25px 6%;
+      }
+
+      footer p {
+        margin-top: 8px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+  <a href="#home" class="logo-text">
+    BERKARAKTER<span>.ID</span>
+  </a>
+
+  <nav class="nav-menu">
+
+    <a href="#koleksi">Koleksi</a>
+
+    <a href="#video">Video</a>
+
+    <a href="#order">Order</a>
+
+  </nav>
+
+  <a
+    class="nav-order"
+    href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+    target="_blank">
+
+    ORDER ↗
+
+  </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div>
+
+    <p class="small-title">
+      BERKARAKTER.ID / 2026
+    </p>
+
+    <h1>
+      Wear your<br>
+      <i>character.</i>
+    </h1>
+
+    <p class="hero-text">
+
+      Fashion untuk kamu yang punya gaya sendiri.
+      Temukan koleksi BERKARAKTER.ID dan pilih
+      yang paling kamu.
+
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#koleksi"
+        class="button button-black">
+
+        LIHAT KOLEKSI
+
+      </a>
+
+
+      <a
+        href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+        target="_blank"
+        class="button button-outline">
+
+        CHAT WHATSAPP
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-logo">
+
+    <img
+      src="logo.png"
+      alt="Logo BERKARAKTER.ID">
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= VIDEO UTAMA ================= -->
+
+<section class="featured-section" id="video">
+
+  <p class="section-label">
+    01 / FEATURED VIDEO
+  </p>
+
+  <h2 class="section-title">
+    See the<br>
+    <i>character.</i>
+  </h2>
+
+
+  <div class="main-video">
+
+    <video
+      controls
+      playsinline
+      poster="produk-01.jpg">
+
+      <source
+        src="video-utama.mp4"
+        type="video/mp4">
+
+    </video>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= KOLEKSI ================= -->
+
+<section class="collection" id="koleksi">
+
+  <p class="section-label">
+    02 / COLLECTION
+  </p>
+
+  <h2 class="section-title">
+    Pick your<br>
+    <i>piece.</i>
+  </h2>
+
+  <p class="collection-description">
+
+    Koleksi BERKARAKTER.ID yang siap menemani
+    gaya dan karakter kamu.
+
+  </p>
+
+
+  <div class="products">
+
+
+    <!-- PRODUK 01 -->
+
+    <article class="product">
+
+      <img
+        src="produk-01.jpg"
+        alt="Produk BERKARAKTER.ID 01">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          01
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUK 02 -->
+
+    <article class="product">
+
+      <img
+        src="produk-02.jpg"
+        alt="Produk BERKARAKTER.ID 02">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          02
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUK 03 -->
+
+    <article class="product">
+
+      <img
+        src="produk-03.jpg"
+        alt="Produk BERKARAKTER.ID 03">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          03
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUK 04 -->
+
+    <article class="product">
+
+      <img
+        src="produk-04.jpg"
+        alt="Produk BERKARAKTER.ID 04">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          04
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUK 05 -->
+
+    <article class="product">
+
+      <img
+        src="produk-05.jpg"
+        alt="Produk BERKARAKTER.ID 05">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          05
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUK 06 -->
+
+    <article class="product">
+
+      <img
+        src="produk-06.jpg"
+        alt="Produk BERKARAKTER.ID 06">
+
+      <div class="product-info">
+
+        <span class="product-number">
+          06
+        </span>
+
+        <span class="product-name">
+          BERKARAKTER PIECE
+        </span>
+
+        <a
+          class="product-order"
+          href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+          target="_blank">
+
+          ORDER ↗
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= VIDEO KATALOG ================= -->
+
+<section class="video-catalog">
+
+  <p class="section-label">
+    03 / VIDEO CATALOG
+  </p>
+
+  <h2 class="section-title">
+    Move in<br>
+    <i>character.</i>
+  </h2>
+
+
+  <div class="video-grid">
+
+
+    <div class="video-card">
+
+      <video
+        controls
+        playsinline>
+
+        <source
+          src="produk-01.mp4"
+          type="video/mp4">
+
+      </video>
+
+      <span class="video-name">
+        PRODUCT 01
+      </span>
+
+    </div>
+
+
+    <div class="video-card">
+
+      <video
+        controls
+        playsinline>
+
+        <source
+          src="produk-02.mp4"
+          type="video/mp4">
+
+      </video>
+
+      <span class="video-name">
+        PRODUCT 02
+      </span>
+
+    </div>
+
+
+    <div class="video-card">
+
+      <video
+        controls
+        playsinline>
+
+        <source
+          src="testimoni-01.mp4"
+          type="video/mp4">
+
+      </video>
+
+      <span class="video-name">
+        TESTIMONI
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+  <div class="flower">
+    ✿
+  </div>
+
+  <div>
+
+    <p class="section-label">
+      04 / BERKARAKTER.ID
+    </p>
+
+    <h2>
+      Because your<br>
+      <i>style has a story.</i>
+    </h2>
+
+    <p class="about-text">
+
+      BERKARAKTER.ID hadir untuk kamu
+      yang ingin memakai sesuatu yang terasa
+      personal, nyaman, dan punya karakter.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= ORDER ================= -->
+
+<section class="order" id="order">
+
+  <div>
+
+    <p class="section-label">
+      05 / HOW TO ORDER
+    </p>
+
+    <h2>
+      Ready to<br>
+      <i>order?</i>
+    </h2>
+
+    <p class="order-description">
+
+      Pesan langsung lewat WhatsApp,
+      atau lihat update dan koleksi terbaru
+      kami di sosial media.
+
+    </p>
+
+
+    <a
+      class="wa-button"
+      href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+      target="_blank">
+
+      Hallo minbe, aku mau order dong ↗
+
+    </a>
+
+  </div>
+
+
+
+  <div class="social-links">
+
+
+    <a
+      href="https://www.instagram.com/berkarakterr.id?stkn=YXE2dXNzb21oNTQ2"
+      target="_blank">
+
+      <b>Instagram</b>
+
+      <span>
+        @berkarakterr.id ↗
+      </span>
+
+    </a>
+
+
+    <a
+      href="https://www.tiktok.com/@berkarakterr.id?_r=1&_t=ZS-9A5Lo5ixHIi"
+      target="_blank">
+
+      <b>TikTok</b>
+
+      <span>
+        @berkarakterr.id ↗
+      </span>
+
+    </a>
+
+
+    <a
+      href="https://id.shp.ee/FCTUrbN3?share_channel_code=1"
+      target="_blank">
+
+      <b>Shopee</b>
+
+      <span>
+        Visit our shop ↗
+      </span>
+
+    </a>
+
+
+    <a
+      href="https://wa.me/6289656387208?text=Hallo%20minbe%2C%20aku%20mau%20order%20dong"
+      target="_blank">
+
+      <b>WhatsApp</b>
+
+      <span>
+        0896 5638 7208 ↗
+      </span>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= INFORMASI ================= -->
+
+<section class="info-section">
+
+  <img
+    src="ketentuan-order.jpg"
+    alt="Ketentuan Order BERKARAKTER.ID">
+
+
+  <img
+    src="sapa.jpg"
+    alt="Informasi BERKARAKTER.ID">
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div>
+    <b>BERKARAKTER<span>.ID</span></b>
+  </div>
+
+  <p>
+    Wear your character.
+  </p>
+
+  <p>
+    © 2026 BERKARAKTER.ID
+  </p>
+
+</footer>
+
+
+</body>
+</html>
